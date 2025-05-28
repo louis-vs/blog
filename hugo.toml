@@ -1,13 +1,10 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-gb'
-title = 'East Asia Inspired Blog'
+title = 'Blog'
 
 [params]
-  description = 'Translations and East Asian Language Studies'
-  author = 'Your Name'
-  # Set to true to enable bilingual content support
-  enableBilingualContent = true
-  # Other site parameters
+  description = 'My blog'
+  author = 'Louis Van Steene'
   mainSections = ['posts']
   dateFormat = 'January 2, 2006'
 
