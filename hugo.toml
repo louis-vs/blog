@@ -1,7 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-gb'
 title = 'East Asia Inspired Blog'
-theme = 'blog-theme'
 
 [params]
   description = 'Translations and East Asian Language Studies'
@@ -33,3 +32,8 @@ theme = 'blog-theme'
 [taxonomies]
   tag = 'tags'
   category = 'categories'
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
