@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <div class="home-container">
+    <div class="welcome-section">
+      <h1 class="site-main-title">{{ site.Title }}</h1>
+      <div class="site-main-description">{{ site.Params.description }}</div>
+    </div>
+    
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

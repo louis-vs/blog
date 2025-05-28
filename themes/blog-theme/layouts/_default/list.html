@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="list-container">
+  <h1 class="list-title">{{ if .IsHome }}Recent Posts{{ else }}{{ .Title }}{{ end }}</h1>
+  
+  {{ range .Pages }}
+  <article class="list-item">
+    <h2 class="list-item-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    <div class="list-item-meta">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.author }}
+      &middot; {{ . }}
+      {{ end }}
+    </div>
+    {{ with .Description }}
+    <div class="list-item-description">
+      {{ . }}
+    </div>
+    {{ end }}
+    <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+  </article>
+  {{ end }}
+</div>
+{{ end }}

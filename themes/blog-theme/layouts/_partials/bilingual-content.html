@@ -1,0 +1,29 @@
+{{/* Bilingual content partial for East Asia Student inspired theme */}}
+{{ $content := .Scratch.Get "content" }}
+
+{{ if .Params.originalText }}
+  {{ range .Params.originalText }}
+    <div class="bilingual-block">
+      <div class="original-text">{{ .text | safeHTML }}</div>
+      {{ if .pinyin }}
+      <div class="pinyin">{{ .pinyin | safeHTML }}</div>
+      {{ end }}
+    </div>
+    
+    {{ if .glossary }}
+    <div class="translation-block">
+      <div class="glossary">{{ .glossary | safeHTML }}</div>
+      {{ if .translation }}
+      <div class="translation">{{ .translation | safeHTML }}</div>
+      {{ end }}
+    </div>
+    {{ else if .translation }}
+    <div class="translation-block">
+      <div></div>
+      <div class="translation">{{ .translation | safeHTML }}</div>
+    </div>
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $content }}
+{{ end }}

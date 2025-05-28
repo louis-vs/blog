@@ -1,0 +1,21 @@
+<div class="container">
+  <a href="{{ site.Home.RelPermalink }}" class="site-title">{{ site.Title }}</a>
+  {{ with site.Params.description }}
+  <div class="site-description">{{ . }}</div>
+  {{ end }}
+  <nav>
+    <ul>
+      {{ $currentPage := . }}
+      {{ range site.Menus.main }}
+      {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+      {{ $isSection := eq $currentPage.Section (trim .URL "/") }}
+      {{ $isHome := and (eq .URL "/") $currentPage.IsHome }}
+      <li>
+        <a href="{{ .URL | relLangURL }}" class="{{ if or $isActive $isSection $isHome }}active{{ end }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>

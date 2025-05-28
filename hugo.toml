@@ -1,3 +1,35 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-gb'
-title = 'My New Hugo Site'
+title = 'East Asia Inspired Blog'
+theme = 'blog-theme'
+
+[params]
+  description = 'Translations and East Asian Language Studies'
+  author = 'Your Name'
+  # Set to true to enable bilingual content support
+  enableBilingualContent = true
+  # Other site parameters
+  mainSections = ['posts']
+  dateFormat = 'January 2, 2006'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Posts'
+    url = '/posts/'
+    weight = 2
+  [[menu.main]]
+    name = 'Tags'
+    url = '/tags/'
+    weight = 3
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 4
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
